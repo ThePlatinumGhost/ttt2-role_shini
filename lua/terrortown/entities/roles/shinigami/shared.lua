@@ -44,6 +44,7 @@ if SERVER then
 	local function ResetShinigami()
 		for _, ply in ipairs(player.GetAll()) do
 			ply:SetNWBool("SpawnedAsShinigami", false)
+			ply:SetSubRoleModel(nil)
 		end
 	end
 
@@ -80,6 +81,7 @@ if SERVER then
 				false, true, -- there need to be your corpse and you don't prevent win
 				nil
 			)
+		victim:SetSubRoleModel("models/player/soldier_stripped.mdl")
 		end
 	end)
 
